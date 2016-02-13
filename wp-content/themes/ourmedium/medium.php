@@ -7,12 +7,6 @@ if ($query -> have_posts()): while ($query -> have_posts()) :  $query -> the_pos
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<!-- post title -->
-		<h2>
-		    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
-
 		<!-- post details -->
 		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
 		<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
