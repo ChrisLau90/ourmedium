@@ -120,6 +120,9 @@ function html5blank_styles()
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+    
+    wp_register_style('sc-player-standard', get_template_directory_uri() . '/soundcloud-custom-player-master/css/sc-player-standard.css', array(), '1.0', 'all');
+    wp_register_style('sc-player-standard', get_template_directory_uri() . '/soundcloud-custom-player-master/css/sc-player.css', array(), '1.0', 'all');
 }
 
 // Register HTML5 Blank Navigation
