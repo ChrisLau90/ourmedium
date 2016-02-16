@@ -4,6 +4,10 @@
   height: 270px;
   position: relative;
   margin-bottom: 20px;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .sc-player ol, .sc-player li{
