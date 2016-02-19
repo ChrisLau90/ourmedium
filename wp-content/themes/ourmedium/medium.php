@@ -15,7 +15,7 @@ if ($query -> have_posts()): while ($query -> have_posts()) :  $query -> the_pos
 		</span -->
 		<!-- /post details -->
 		<div class="medium-wrapper">
-			<?php echo(types_render_field("image", array('class' => 'medium-image', 'size' => 'large')))?>
+			<?php echo(types_render_field("image", array('class' => 'medium-image', 'size' => 'full')))?>
 
 			<a href="<?php echo(types_render_field("soundcloud-url", array('output' => 'raw'))) ?>" class="sc-player">Track Name</a>
 		</div>

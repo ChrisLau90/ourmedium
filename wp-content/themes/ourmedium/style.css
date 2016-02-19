@@ -37,6 +37,19 @@ body {
     width: 100%;
     height: 100%;
 }
+
+main {
+	height: 100%;
+}
+
+section {
+	height: 100%;
+}
+
+article {
+	height: 100%;
+}
+
 /* clear */
 .clear:before,
 .clear:after {
@@ -140,28 +153,16 @@ input:focus {
 .medium-wrapper {
 	width: 100%;
 	height: 100%;
-	padding: 10px
 }
 
 .medium-image {
-	display: block;
-	/*max-width:884px;
-	max-height:600px;*/
-	width: auto;
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.medium-audio {
-	margin-left: auto;
-	margin-right: auto;
-	display: none;
-}
-
-.medium-audio iframe {
-	width: 100%;
-	height: 150px;
+	width:auto;
+    height:auto;
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*------------------------------------*\

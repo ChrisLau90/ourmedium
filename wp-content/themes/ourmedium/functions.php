@@ -121,8 +121,8 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('sc-player-standard', get_template_directory_uri() . '/soundcloud-custom-player-master/css/sc-player-standard.css', array(), '1.0', 'all');
-    wp_enqueue_style('sc-player-standard');
+    wp_register_style('sc-player-minimal', get_template_directory_uri() . '/soundcloud-custom-player-master/css/sc-player-minimal.css', array(), '1.0', 'all');
+    wp_enqueue_style('sc-player-minimal');
     
     wp_register_style('sc-player', get_template_directory_uri() . '/soundcloud-custom-player-master/css/sc-player.css', array(), '1.0', 'all');
     wp_enqueue_style('sc-player');
