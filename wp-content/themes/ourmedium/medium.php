@@ -16,11 +16,9 @@ if ($query -> have_posts()): while ($query -> have_posts()) :  $query -> the_pos
 		<!-- /post details -->
 		<div class="medium-wrapper">
 			<?php echo(types_render_field("image", array('class' => 'medium-image', 'size' => 'full')))?>
-
 			<a href="<?php echo(types_render_field("soundcloud-url", array('output' => 'raw'))) ?>" class="sc-player">Track Name</a>
 		</div>
-                
-		
+        
 		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 
 		<?php edit_post_link(); ?>
@@ -31,11 +29,9 @@ if ($query -> have_posts()): while ($query -> have_posts()) :  $query -> the_pos
 <?php endwhile; ?>
 
 <?php else: ?>
-
 	<!-- article -->
 	<article>
 		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 	</article>
 	<!-- /article -->
-
 <?php endif; ?>
