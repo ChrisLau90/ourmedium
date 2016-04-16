@@ -132,6 +132,9 @@ function html5blank_styles()
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+    
+    wp_register_style('font-awesome', get_template_directory_uri() . '/font-awesome-4.6.1/css/font-awesome.css');
+    wp_enqueue_style('font-awesome');
 }
 
 // Register HTML5 Blank Navigation
@@ -341,6 +344,26 @@ function html5blankcomments($comment, $args, $depth)
 	<?php endif; ?>
 <?php }
 
+// Add ourmedium to front page dropdown
+function add_ourmedium_to_dropdown($pages, $r){
+    if('page_on_front' == $r['name'])
+    {
+        $args = array (
+            'post_type' => 'medium'
+        );
+        $items = get_post($args);
+        $pages = array_merge($pages, $items);
+    }
+    
+    return $pages;
+}
+
+function enable_front_page_ourmedium($query){
+    if('' == $query -> $query_vars['post_type'] && 0 != $query -> $query_vars['page_id']){
+        $query -> $query_vars['post_type'] = array('page','medium');
+    }
+}
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
@@ -354,7 +377,7 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
-
+add_action('pre_get_posts', 'enable_front_page_ourmedium'); // Enable ourmedium front page
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -386,6 +409,7 @@ add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' bu
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
+add_filter('get_pages', 'add_ourmedium_to_dropdown');
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether

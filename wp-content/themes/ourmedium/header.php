@@ -32,7 +32,7 @@
 
         <!-- header -->
         <header class="header clear" role="banner">
-
+            <i class="fa fa-bars menu-btn"></i>
             <!-- logo -->
             <div class="logo">
                 <a href="<?php echo home_url(); ?>">
