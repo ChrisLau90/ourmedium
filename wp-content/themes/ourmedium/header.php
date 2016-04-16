@@ -32,7 +32,7 @@
 
         <!-- header -->
         <header class="header clear" role="banner">
-            <i class="fa fa-bars menu-btn"></i>
+            
             <!-- logo -->
             <div class="logo">
                 <a href="<?php echo home_url(); ?>">
@@ -41,9 +41,7 @@
                 </a>
             </div>
             <!-- nav -->
-            <nav class="nav" role="navigation">
-                <?php html5blank_nav(); ?>
-            </nav>
+            <i class="fa fa-bars fa-2x menu-btn"></i>
             <!-- /nav -->
 
             <!-- /logo -->
@@ -51,3 +49,7 @@
 
         </header>
         <!-- /header -->
+
+<nav class="nav" role="navigation">
+    <?php html5blank_nav(); ?>
+</nav>

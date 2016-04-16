@@ -5,7 +5,11 @@
 		'use strict';
 		
 		// DOM ready
-		$(document).on('click', '.medium-change', function( event ) {
+        $(document).on('click', '.menu-btn', function( event ) {
+            $('.nav').show();
+        });
+        
+		/*$(document).on('click', '.medium-change', function( event ) {
 			event.preventDefault();
 			$.ajax({
 				url: html5blankscripts.ajaxurl,
@@ -17,7 +21,7 @@
 					alert( result );
 				}
 			})
-		})
+		})*/
 		
 	});
 	

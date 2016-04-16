@@ -92,7 +92,7 @@ input:focus {
 
 /* wrapper */
 .wrapper {
-	width:95%;
+	width:100%;
 	margin:0 auto;
 	position:relative;
 	/*border: 1px solid red;*/
@@ -102,16 +102,12 @@ input:focus {
 }
 /* header */
 .header {
-
-}
-
-.header .menu-btn {
-    z-index: 2;
+    text-align: center 
 }
 
 /* logo */
 .logo {
-
+    display: inline-block;
 }
 .logo-img {
 	width: 320px; 
@@ -120,29 +116,46 @@ input:focus {
     margin-right: auto
 }
 /* nav */
+.menu-btn {
+    z-index: 2;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer
+}
+
 .nav {
+    position: absolute;
+    z-index: 2;
 	display: none;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: table;
     width: 100%;
-    /*font-size: 4vmin;*/
-    font-size: 16px;
+    font-size: 1.4em;
 }
 
 .nav ul li {
-    //display: inline;
-    display: table-cell;
-    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+.nav ul li:first {
+    padding-top: 20px;
 }
 
 .nav ul li a {
     display: block;
 }
+
 /* sidebar */
 .sidebar {
 
