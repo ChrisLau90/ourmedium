@@ -99,7 +99,10 @@ function html5blank_header_scripts()
         wp_enqueue_script('modernizr'); // Enqueue it!
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
+        wp_enqueue_script('html5blankscripts'); // Enqueue it! 
+        wp_localize_script( 'html5blankscripts', 'html5blankscripts', array(
+            'ajaxurl' => admin_url( 'admin-ajax.php' )
+        ));
         
         wp_register_script('soundcloud.player.api', get_template_directory_uri() . '/soundcloud-custom-player-master/js/soundcloud.player.api.js');
         wp_enqueue_script('soundcloud.player.api');
@@ -123,9 +126,6 @@ function html5blank_styles()
 {
     wp_register_style('sc-player-minimal', get_template_directory_uri() . '/soundcloud-custom-player-master/css/sc-player-minimal.css', array(), '1.0', 'all');
     wp_enqueue_style('sc-player-minimal');
-    
-    wp_register_style('sc-player', get_template_directory_uri() . '/soundcloud-custom-player-master/css/sc-player.css', array(), '1.0', 'all');
-    wp_enqueue_style('sc-player');
     
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
@@ -354,6 +354,7 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

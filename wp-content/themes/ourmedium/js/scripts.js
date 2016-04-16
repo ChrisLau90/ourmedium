@@ -5,7 +5,19 @@
 		'use strict';
 		
 		// DOM ready
-		
+		$(document).on('click', '.medium-change', function( event ) {
+			event.preventDefault();
+			$.ajax({
+				url: html5blankscripts.ajaxurl,
+				type: 'post',
+				data: {
+					action: 'ajax_pagination'
+				},
+				success: function( result ) {
+					alert( result );
+				}
+			})
+		})
 		
 	});
 	

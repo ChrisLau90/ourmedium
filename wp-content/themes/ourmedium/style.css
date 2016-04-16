@@ -185,6 +185,7 @@ input:focus {
 }
 
 .sc-player {
+	display: none;
 }
 
 /*------------------------------------*\
